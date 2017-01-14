@@ -1,5 +1,6 @@
 # Send/Receive SMS
-Are one of those people that can't or won't carry a smartphone all the time? Do you still want to tell Homey to turn on the oven. Look no further! You can now command Homey to cater your every whim by SMS! With this plugin, you can even let Homey give you a call when your girlfriend escapes from the kitchen!
+Are one of those people that can't or won't carry a smartphone all the time? Do you still want to tell Homey to turn on the oven? Look no further! You can now command Homey to cater your every whim by SMS! With this plugin, you can even let Homey give you a call when your girlfriend escapes from the kitchen!
+
 If you just want home to cheaply send text messages to your phone, take a look at the [Send SMS](https://apps.athom.com/app/com.gruijter.sms) app by Robin Gruijter. If you want more functionality, read on!
 
 ## You can:
