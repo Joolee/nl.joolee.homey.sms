@@ -1,0 +1,217 @@
+<!doctype html>
+<html>
+<head>
+<link href="style.css" rel="stylesheet">
+<script src="/manager/webserver/assets/js/jquery.js"></script>
+<script src="clipboard.min.js"></script>
+<script src="dynamics.js"></script>
+</head>
+<body>
+
+<h1 data-i18n="settings.title"></h1>
+<div class="content-wrapper">
+
+	<p data-i18n="settings.info"></p>
+
+	<h2 data-i18n="settings.sending.header"></h2>
+
+	<h3 class="info-button"><i class="fa fa-info-circle"></i> <a href="#" data-i18n="settings.sending.free-helpbutton"></a> <i class="fa fa-angle-right"></i></h3>
+	<div class="info-slider">
+		<p data-i18n="settings.sending.free-help.info"></p>
+		<ol>
+			<li data-i18n="settings.sending.free-help.register">
+			<li data-i18n="settings.sending.free-help.claim">
+			<li data-i18n="settings.sending.free-help.number">
+			<li data-i18n="settings.sending.free-help.validate">
+		</ol>
+		<span class="button done"><i class="fa fa-check" aria-hidden="true"></i><span data-i18n="settings.done"></span></span>
+	</div>
+
+	<h3 class="info-button"><i class="fa fa-info-circle"></i> <a href="#" data-i18n="settings.sending.api-helpbutton"></a> <i class="fa fa-angle-right"></i></h3>
+	<div class="info-slider">
+		<p data-i18n="settings.sending.api-help.info"></p>
+		<ol>
+			<li data-i18n="settings.sending.api-help.register">
+			<li data-i18n="settings.sending.api-help.api">
+			<li data-i18n="settings.sending.api-help.rest">
+			<li data-i18n="settings.sending.api-help.addkey">
+			<li data-i18n="settings.sending.api-help.showkey">
+			<li data-i18n="settings.sending.api-help.pastekey">
+		</ol>
+		<span class="button done"><i class="fa fa-check" aria-hidden="true"></i><span data-i18n="settings.done"></span></span>
+	</div>
+	
+	<h3 class="info-button"><i class="fa fa-info-circle"></i> <a href="#" data-i18n="settings.sending.confirm-helpbutton"></a> <i class="fa fa-angle-right"></i></h3>
+	<div class="info-slider">
+		<p data-i18n="settings.sending.confirm-help.info"></p>
+		<ol>
+			<li data-i18n="settings.sending.confirm-help.register">
+			<li data-i18n="settings.sending.confirm-help.api">
+			<li>
+				<span data-i18n="settings.sending.confirm-help.copy"></span><br>
+				<input type="text" class="webhookUrl" id="webhookUrl1" value="" readonly="">
+				<button onclick="" class="webhookUrlCopy" data-clipboard-target="#webhookUrl1"><i class="fa fa-copy"></i></button>
+			</li>
+			<li data-i18n="settings.sending.confirm-help.pasta">
+		</ol>
+		<span class="button done"><i class="fa fa-check" aria-hidden="true"></i><span data-i18n="settings.done"></span></span>
+	</div>
+
+	<div class="form sendingForm">
+		<div class="field row required">
+			<label for="apikey" data-i18n="settings.sending.api-key-label"></label>
+			<input id="apikey" type="text" value="" />
+		</div>
+		
+		<div class="field row">
+			<label for="sender" data-i18n="settings.sending.sender-label"></label>
+			<input id="sender" type="text" value="" /> <i class="fa fa-info-circle" data-i18n-title="settings.sending.sender-help"></i>
+		</div>
+		
+		<div class="field row radios">
+			<label for="translate" data-i18n="settings.sending.translate-label"></label>
+			<ul>
+				<li><input id="translate-on" type="radio" name="translate" value="on" /> <label for="translate-on" data-i18n="settings.sending.translate-on-text"></label><br>
+				<li><input id="translate-off" type="radio" name="translate" value="off" /> <label for="translate-off" data-i18n="settings.sending.translate-off-text"></label> <i class="fa fa-info-circle" data-i18n-title="settings.sending.translate-off-helptext"></i>
+			</ul>
+		</div>
+		
+		<table id="creditsinfo">
+			<tr>
+				<th><span data-i18n="settings.sending.credits_balance"></span>: </th>
+				<td id="creditbalance"></td>
+			</tr>
+			<tr>
+				<th><span data-i18n="settings.sending.credits_payment"></span>: </th>
+				<td id="creditpayment"></td>
+			</tr>
+		</table>
+		<p id="accountWarning" data-i18n="settings.sending.accountwarning">
+			
+		</p>
+
+		<div class="buttonrow">
+			<span class="button" onclick="saveSending()"><i class="fa fa-floppy-o" aria-hidden="true"></i><span data-i18n="settings.savebutton"></span></span>
+			<span data-i18n="settings.saved" class="success"></span>
+		</div>
+	</div>
+</div>
+<hr>
+<div class="content-wrapper">
+	
+	<h2 data-i18n="settings.receiving.header"></h2>
+
+	<p data-i18n="settings.receiving.info"></p>
+
+	<h3 class="info-button"><i class="fa fa-info-circle"></i> <a href="#" data-i18n="settings.receiving.receive-helpbutton"></a> <i class="fa fa-angle-right"></i></h3>
+	<div class="info-slider">
+		<p data-i18n="settings.receiving.receive-help.info"></p>
+		<ol>
+			<li data-i18n="settings.receiving.receive-help.register">
+			<li data-i18n="settings.receiving.receive-help.vmn">
+			<li data-i18n="settings.receiving.receive-help.edit-default">
+			<li>
+				<span data-i18n="settings.receiving.confirm-help.copy"></span><br>
+				<input type="text" class="webhookUrl" id="webhookUrl2" value="" readonly="">
+				<button onclick="" class="webhookUrlCopy" data-clipboard-target="#webhookUrl2"><i class="fa fa-copy"></i></button>
+			</li>
+			<li data-i18n="settings.receiving.receive-help.do-config">
+			<li data-i18n="settings.receiving.receive-help.save">
+		</ol>
+		<span class="button done"><i class="fa fa-check" aria-hidden="true"></i><span data-i18n="settings.done"></span></span>
+	</div>
+	
+	<h3 class="info-button"><i class="fa fa-info-circle"></i> <a href="#" data-i18n="settings.receiving.phonenumber-helpbutton"></a> <i class="fa fa-angle-right"></i></h3>
+	<div class="info-slider">
+		<p data-i18n="settings.receiving.phonenumber-help.info1"></p>
+		<p data-i18n="settings.receiving.phonenumber-help.info2"></p>
+		<ol>
+			<li>
+				<span data-i18n="settings.receiving.phonenumber-help.send-message"></span><br>
+				<div class="form sendmsg">
+					<div class="field row required">
+						<label for="vmn-recipient" data-i18n="settings.receiving.phonenumber-help.recipient-label"></label>
+						<input id="vmn-recipient" type="text" value="" placeholder="0612345678" />
+					</div>
+					
+					<div class="field row">
+						<label for="vmn-sender" data-i18n="settings.receiving.phonenumber-help.sender-label"></label>
+						<input id="vmn-sender" type="text" value="inbox" /> <i class="fa fa-info-circle" data-i18n-title="settings.sending.sender-help"></i>
+					</div>
+					
+					<div class="field row">
+						<label for="vmn-message" data-i18n="settings.receiving.phonenumber-help.message-label"></label>
+						<input id="vmn-message" type="text" value="Please reply to this test message!" />
+					</div>
+					
+					<div class="buttonrow">
+						<span class="button" onclick="sendMessageVMN()"><i class="fa fa-send-o" aria-hidden="true"></i><span data-i18n="settings.receiving.phonenumber-help.send-message-label"></span></span>
+						<span data-i18n="settings.saved" class="success"></span>
+					</div>
+				</div>
+			</li>
+			<li data-i18n="settings.receiving.phonenumber-help.read-below">
+		</ol>
+		<span class="button done"><i class="fa fa-check" aria-hidden="true"></i><span data-i18n="settings.done"></span></span>
+	</div>
+		
+	<h3 class="subheader" data-i18n="settings.receiving.vmn-matches"></h3>
+	<p data-i18n="settings.receiving.vmn-matches-zero" id="vmn-matches-zero"></p>
+	<div id="vmn-matches" class="loading">
+		<table>
+			<thead>
+				<th data-i18n="settings.receiving.sender"></th>
+				<th data-i18n="settings.receiving.vmn"></th>
+			</thead>
+			<tbody>
+			</tbody>
+		</table>
+	</div>
+	
+</div>
+<hr>
+<div class="content-wrapper">
+
+	<h2 data-i18n="settings.logs.header"></h2>
+
+	<h3 class="info-button"><i class="fa fa-info-circle"></i> <a href="#" data-i18n="settings.sending.confirm-helpbutton-logs"></a> <i class="fa fa-angle-right"></i></h3>
+	<div class="info-slider">
+		<p data-i18n="settings.sending.confirm-help.info"></p>
+		<ol>
+			<li data-i18n="settings.sending.confirm-help.register">
+			<li data-i18n="settings.sending.confirm-help.api">
+			<li>
+				<span data-i18n="settings.sending.confirm-help.copy"></span><br>
+				<input type="text" class="webhookUrl" id="webhookUrl3" value="" readonly="">
+				<button onclick="" class="webhookUrlCopy" data-clipboard-target="#webhookUrl3"><i class="fa fa-copy"></i></button>
+			</li>
+			<li data-i18n="settings.sending.confirm-help.pasta">
+		</ol>
+		<span class="button done"><i class="fa fa-check" aria-hidden="true"></i><span data-i18n="settings.done"></span></span>
+	</div>
+	
+	<div class="form">
+		<div id="logs" class="loading">
+			<table>
+				<thead>
+					<th data-i18n="settings.logs.direction"></th>
+					<th data-i18n="settings.logs.type"></th>
+					<th data-i18n="settings.logs.date"></th>
+					<th data-i18n="settings.logs.status"></th>
+					<th data-i18n="settings.logs.sender"></th>
+					<th data-i18n="settings.logs.recipient"></th>
+					<th data-i18n="settings.logs.message"></th>
+				</thead>
+				<tbody>
+				</tbody>
+			</table>
+		</div>
+		
+		<div class="buttonrow">
+			<span class="button" onclick="clearLogs()"><i class="fa fa-trash-o" aria-hidden="true"></i><span data-i18n="settings.logs.clearbutton"></span></span>
+			<span data-i18n="settings.saved" class="success right"></span>
+		</div>
+	</div>
+</div>
+</body>
+</html>

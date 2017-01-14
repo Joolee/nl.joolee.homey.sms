@@ -1,0 +1,260 @@
+{
+    "id": "nl.joolee.homey.sms",
+    "name": {
+        "en": "Send/Receive SMS",
+		"nl": "Zend en ontvang SMS"
+    },
+	"description": {
+		"en": "Send and receive SMS messages with Homey",
+		"nl": "Zend en ontvang SMS berichten via Homey"
+	},
+	"category": "tools",
+    "version": "1.0.0",
+    "compatibility": "0.x || 1.x",
+    "author": {
+        "name": "Joolee",
+        "email": "athom@joolee.nl"
+    },
+	"images": {
+		"large": "./assets/images/large.png",
+		"small": "./assets/images/small.png"
+	},
+	"flow": {
+		"triggers": [
+			{
+                "id": "message_received",
+                "title": {
+                    "en": "Message received",
+					"nl": "Bericht ontvangen"
+                },
+				"tokens": [
+					{
+						"name": "messageRecipient",
+						"title": {
+							"en": "Recipient",
+							"nl": "Ontvanger"
+						},
+						"example": {
+							"en": "31612345678"
+						}
+					},
+					{
+						"name": "messageSender",
+						"title": {
+							"en": "Sender",
+							"nl": "Verzender"
+						},
+						"example": {
+							"en": "31612345678"
+						}
+					},
+					{
+						"name": "messageBody",
+						"title": {
+							"en": "Message",
+							"nl": "Bericht"
+						},
+						"example": {
+							"en": "This is a test message",
+							"nl": "Dit is een testbericht"
+						}
+					},
+					{
+						"name": "messageType",
+						"title": {
+							"en": "Type",
+							"nl": "Type"
+						},
+						"example": {
+							"en": "sms"
+						}
+					}
+				]
+            },
+			{
+                "id": "message_report",
+                "title": {
+                    "en": "Send report received",
+					"nl": "Verzendrapport ontvangen"
+                },
+				"tokens": [
+					{
+						"name": "reportRecipient",
+						"title": {
+							"en": "Recipient",
+							"nl": "Ontvanger"
+						},
+						"example": {
+							"en": "31612345678"
+						}
+					},
+					{
+						"name": "reportStatus",
+						"title": {
+							"en": "State",
+							"nl": "Status"
+						},
+						"example": {
+							"en": "delivered"
+						}
+					},
+					{
+						"name": "reportType",
+						"title": {
+							"en": "Type",
+							"nl": "Type"
+						},
+						"example": {
+							"en": "flash"
+						}
+					}
+				]
+            },
+			{
+                "id": "message_send",
+                "title": {
+                    "en": "Message send",
+					"nl": "Bericht verzonden"
+                },
+				"tokens": [
+					{
+						"name": "sendRecipient",
+						"title": {
+							"en": "Recipient",
+							"nl": "Ontvanger"
+						},
+						"example": {
+							"en": "31612345678"
+						}
+					},
+					{
+						"name": "sendMessage",
+						"title": {
+							"en": "Message",
+							"nl": "Bericht"
+						},
+						"example": {
+							"en": "Test message :)",
+							"nl": "Testbericht :)"
+						}
+					},					{
+						"name": "sendType",
+						"title": {
+							"en": "Type",
+							"nl": "Type"
+						},
+						"example": {
+							"en": "flash"
+						}
+					},
+					{
+						"name": "sendId",
+						"title": {
+							"en": "ID",
+							"nl": "ID"
+						},
+						"example": {
+							"en": "24fa638955850634be0e131b24627692"
+						}
+					}
+				]
+            },
+			{
+                "id": "credits_changed",
+                "title": {
+                    "en": "Credits changed",
+					"nl": "Creditbalans veranderd"
+                },
+				"tokens": [
+					{
+						"name": "balance",
+						"title": {
+							"en": "Credits",
+							"nl": "Credits"
+						},
+						"example": {
+							"en": "26"
+						}
+					}
+				]
+            }
+		],
+		"actions": [
+			{
+				"id": "send_flash",
+				"title": {
+					"en": "Send flash message",
+					"nl": "Verstuur een flashbericht"
+				},
+                "args": [
+                    {
+                        "name": "flashRecipient",
+                        "type": "text",
+                        "placeholder": {
+							"en": "Phone number",
+							"nl": "Telefoonnummer" 
+						}
+                    },
+                    {
+                        "name": "flashMessage",
+                        "type": "text",
+                        "placeholder": {
+							"en": "Message",
+							"nl": "Bericht" 
+						}
+                    }
+				]
+			},
+			{
+				"id": "send_text",
+				"title": {
+					"en": "Send text message",
+					"nl": "Verstuur een tekstbericht"
+				},
+                "args": [
+                    {
+                        "name": "textRecipient",
+                        "type": "text",
+                        "placeholder": {
+							"en": "Phone number",
+							"nl": "Telefoonnummer" 
+						}
+                    },
+                    {
+                        "name": "textMessage",
+                        "type": "text",
+                        "placeholder": {
+							"en": "Message",
+							"nl": "Bericht" 
+						}
+                    }
+				]
+			},
+			{
+				"id": "send_voice",
+				"title": {
+					"en": "Send voice message",
+					"nl": "Verstuur een spraakbericht"
+				},
+                "args": [
+                    {
+                        "name": "voiceRecipient",
+                        "type": "text",
+                        "placeholder": {
+							"en": "Phone number",
+							"nl": "Telefoonnummer" 
+						}
+                    },
+                    {
+                        "name": "voiceMessage",
+                        "type": "text",
+                        "placeholder": {
+							"en": "Message",
+							"nl": "Bericht" 
+						}
+                    }
+				]
+			}
+		]
+	}
+}

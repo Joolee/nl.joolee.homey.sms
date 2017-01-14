@@ -1,0 +1,151 @@
+.fa-info-circle {
+	color: #ccc;
+}
+
+.animate {
+    -moz-transition: all .2s linear;
+    -webkit-transition: all .2s linear;
+    transition: all .2s linear;
+}
+
+.info-button a {
+	text-decoration: none;
+	padding-right: 5px;
+}
+
+.info-slider {
+	display: none;
+    margin: 5px 0 10px 40px;
+    border-left: 1px solid #ccc;
+    padding: 1px 0 10px 10px;
+}
+
+.info-slider img {
+    margin: 5px;
+    border: 1px solid #ccc;
+    padding: 2px;
+}
+
+.info-slider .done {
+	
+}
+
+.form,
+h3.subheader {
+	margin-top: 25px;
+}
+
+ol {
+	margin-left: 1em;
+}
+
+li { 
+	padding: .5em;
+}
+
+th {
+	text-align: left;
+	font-weight: 900;
+	font-weight: 900 !important;
+	padding-right: 25px;
+}
+
+a {
+	color: #333;
+}
+
+#creditsinfo {
+	display: none;
+}
+
+#accountWarning {
+	color: #600;
+	font-weight: bold;
+}
+
+.row.radios {
+	display: flex;
+}
+
+.row.radios li {
+	padding-top: 0;
+	list-style-type: none;
+}
+
+.row.radios input,
+.row.radios li label {
+	width: auto;
+}
+
+.row.required label {
+	font-weight: bold;
+}
+
+.success {
+	color: #060;
+	font-weight: bold;
+	display: none;
+	padding-left: 50px;
+}
+
+.content-wrapper {
+	max-width: 900px;
+}
+
+.content-wrapper p {
+	margin: 1em 0;
+}
+
+.buttonrow {
+	padding-right: 50px;
+	margin: 15px 0 1px 0;
+}
+
+hr {
+	margin-top: 50px;
+}
+
+#logs {
+	min-height: 100px;
+	max-height: 300px;
+	overflow-y: auto;
+}
+
+#logs.loading {
+	background: url(/manager/settings/img/ajax-loader.gif) no-repeat center center;
+}
+
+#logs.loading table {
+	display: none;
+}
+
+#logs table {
+	width: 100%;
+}
+
+.button span {
+	padding-left: .3em;
+}
+
+td.log-direction,
+td.log-type {
+	text-align: center;
+}
+
+td.log-message {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+
+.webhookUrl {
+    width: 550px;
+}
+
+#vmn-matches {
+	display: none;
+}
+
+.vmn-sender {
+	vertical-align: top;
+}

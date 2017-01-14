@@ -1,0 +1,97 @@
+{
+	"settings": {
+		"savebutton": "Save changes",
+		"done": "Done",
+		"title": "Send and receive SMS messages",
+		"info": "This plugin only supports MessageBird for the moment. You can send sms and voice messages to your phone and use received messages to control Homey. How cool is that!",
+		"saved": "<i class=\"fa fa-check\" aria-hidden=\"true\"></i> Settings have been saved",
+		"sending": {
+			"header": "Sending messages",
+			"free-helpbutton": "How to send 9 free messages?",
+			"free-help": {
+				"info": "MessageBird allows you to send 9 free 'test' messages to a single mobile phone number. Here is how you set it up:",
+				"register": "Register or login to your account at <a href=\"https://www.messagebird.com\">MessageBird</a>. Dismiss the 'Setup Guide' if it pops up.",
+				"claim": "Click on the 'Claim your free credits' button on the left.<br><img src=\"img/en/free-help-claim.png\">",
+				"number": "Enter your country and a valid phone number and click on the big 'verify' button.<br><img src=\"img/en/free-help-number.png\">",
+				"validate": "You'll receive a text message with a number. Enter it in on the next page and click 'verify' again.<br><img src=\"img/en/free-help-validate.png\">",
+				"congratz": "You can now send 8 or 9 free 'test' messages to the phone number you just validated :)"
+			},
+			"api-helpbutton": "How to get your API Key for Homey?",
+			"api-help": {
+				"info": "Homey needs a personalized API key to be able to send SMS messages through your MessageBird account. Here is how you set it up:",
+				"register": "Register or login to your account at <a href=\"https://www.messagebird.com\">MessageBird</a>. Dismiss the 'Setup Guide' if it pops up.",
+				"api": "Browse to the API configuration page.<br><img src=\"img/en/sending-help-api.png\">",
+				"rest": "Click on the 'API ACCESS (REST)' tab and choose 'Add access key'.<br><img src=\"img/en/sending-help-rest.png\">",
+				"addkey": "Fill in the form as follows and click 'add'.<br><img src=\"img/en/sending-help-addkey.png\">",
+				"showkey": "Click on the 'Show key' link ro reveal your API Key.<br><img src=\"img/en/sending-help-showkey.png\">",
+				"pastekey": "Copy the API key into the box below and click 'Save changes.'"
+			},
+			"confirm-helpbutton": "How to set up the 'Send report received' trigger card?",
+			"confirm-helpbutton-logs": "How to get delivery reports?",
+			"confirm-help": {
+				"info": "In order to receive a confirmation when a message has been received by the intended recipient, MessageBird needs to know where to send the delivery reports. Here is how you set it up:",
+				"register": "Register or login to your account at <a href=\"https://www.messagebird.com\">MessageBird</a>. Dismiss the 'Setup Guide' if it pops up.",
+				"api": "Browse to the API configuration page.<br><img src=\"img/en/sending-help-api.png\">",
+				"copy": "Copy the url shown below.<br>",
+				"pasta": "Paste the url in the 'Status report URL' field and click 'Save'.<br><img src=\"img/en/confirm-help-pasta.png\">"
+			},
+			"credits_balance": "Balance",
+			"credits_payment": "Payment",
+			"accountwarning": "No valid account information is set!",
+			"api-key-label": "API Key:",
+			"sender-label": "Sender name:",
+			"sender-help": "The sender of the message. This can be a telephone number (including country code) or an alphanumeric string. In case of an alphanumeric string, the maximum length is 11 characters. Tip: Leave empty to use your VMN. This allows you to have a 'conversation' with Homey. (See 'Receiving messages' for more details)",
+			"translate-label": "Supported characters:",
+			"translate-on-text": "Translate unsupported characters to <a href=\"https://en.wikipedia.org/wiki/GSM_03.38#GSM_7-bit_default_alphabet_and_extension_table_of_3GPP_TS_23.038_.2F_GSM_03.38\" target=\"_BLANK\">GSM 03.38</a> (default)",
+			"translate-off-text": "Spend extra credits to send UTF-8 messages, these support all characters.",
+			"translate-off-helptext": "This still uses the cheap option when your message contains no special characters."
+		},
+		"receiving": {
+			"header": "Receiving messages",
+			"info": "In order for Homey to receive text messages, you need to instruct MessageBird to deliver the messages to Homey and learn the phone number you can send messages to.",
+			"receive-helpbutton": "How to set up MessageBird to send messages to Homey?",
+			"receive-help": {
+				"info": "MessageBird needs to be instructed to send all received messages to Homey. You can customize this to suit your needs but this is how I set it up:",
+				"register": "Register or login to your account at <a href=\"https://www.messagebird.com\">MessageBird</a>. Dismiss the 'Setup Guide' if it pops up.",
+				"vmn": "Browse to the Products > VMN configuration page.<br><img src=\"img/en/receive-help-vmn.png\">",
+				"edit-default": "Click the 'edit' button for the 'Default VMN Configuration'<br><img src=\"img/en/receive-help-edit-default.png\">",
+				"copy": "Copy the url shown below.<br>",
+				"do-config": "Configure the form to read <strong>If '[Always]' then 'Forward to URL' 'POST'</strong> and paste the URL you copied above in the 'URL' field.<br><img src=\"img/en/receive-help-do-config.png\">",
+				"save": "Click save to store the configuration."
+			},
+			"phonenumber-helpbutton": "How to get a phonenumber to send my text messages to?",
+			"phonenumber-help": {
+				"info1": "MessageBird provides a free service to allow you to receive SMS text messages they call 'Shared Virtual Mobile Number'. When you send a message to your phone through the Shared VMN, the message will be send to your phone by a random number. You can then reply to this number and the message will be received by Homey. You need to do this on every phone you want to allow to send messages to Homey. This way you can find out the special phone number assigned to that phone.",
+				"info2": "You can alternatively choose to buy your own Virtual Mobile Number. In that case, all phones can send messages to this number and they will be received by Homey! Read more about VMN's on the <a href=\"http://support.messagebird.com/hc/en-us/sections/201958489-VMN-Virtual-Mobile-Number\">MessageBird website</a>",
+				"send-message": "Send a message to your phone using the sender 'inbox' (or just empty) using the form below:",
+				"read-below": "Reply to the message using your phone or get the special phone number for your phone from the list below.",
+				"recipient-label": "Recipient:",
+				"sender-label": "Sender name:",
+				"sender-help": "The sender of the message. This can be a telephone number (including country code) or an alphanumeric string. In case of an alphanumeric string, the maximum length is 11 characters. Tip: Leave empty to use your VMN. This allows you to have a 'conversation' with Homey. (See 'Receiving messages' for more details)",
+				"message-label": "Message:",
+				"send-message-label": "Send message!"
+			},
+			"vmn-matches": "Known phone numbers for Homey:",
+			"vmn-matches-zero": " - You have not send any messages from 'inbox' yet. Click on the link above to learn how.",
+			"sender": "From this number:",
+			"vmn": "send messages to:"
+		},
+		"logs": {
+			"header": "Message logs",
+			"clearbutton": "Clear log",
+			"confirmclear": "This will clear all message logs. Do you really want to continue?",
+			"direction": "Direction",
+			"type": "Type",
+			"date": "Date",
+			"status": "Status",
+			"sender": "Sender",
+			"recipient": "Recipient",
+			"message": "Message",
+			"send": "Send",
+			"received": "Received",
+			"sms": "SMS message",
+			"flash": "Flash message",
+			"voice": "Voice message"
+		}
+	}
+}
