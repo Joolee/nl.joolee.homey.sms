@@ -128,6 +128,11 @@ function sendMessage(callback, args) {
 	Homey.log('Sending ' + args.type + ' message', args);
 	
 	var sender = Homey.manager('settings').get( 'messagebird.sender' );
+
+	if (typeof(args.sender) != 'undefined') {
+		sender = args.sender;
+	}
+
 	// Default to VMN number
 	if(sender == '') {
 		sender = 'inbox';
