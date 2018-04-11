@@ -3,7 +3,7 @@
 		"savebutton": "Save changes",
 		"done": "Done",
 		"title": "Send and receive SMS messages",
-		"info": "This plugin only supports MessageBird for the moment. You can send sms and voice messages to your phone and use received messages to control Homey. How cool is that!",
+		"info": "This plugin only supports MessageBird for the moment. You can send sms and voice messages to your phone or use your phone to send messages and control Homey. How cool is that!",
 		"saved": "<i class=\"fa fa-check\" aria-hidden=\"true\"></i> Settings have been saved",
 		"sending": {
 			"header": "Sending messages",

@@ -1,5 +1,6 @@
 {
     "id": "nl.joolee.homey.sms",
+	"sdk": 1,
     "name": {
         "en": "Send/Receive SMS",
 		"nl": "Zend en ontvang SMS"

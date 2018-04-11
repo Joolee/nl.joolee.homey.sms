@@ -30,7 +30,8 @@ function init() {
 		chart: 'stepLine'
 	}, function (err , success){});
 
-			// Reinitialise messagebird api when the key changes.
+	
+	// Reinitialise messagebird api when the key changes.
 	// Fire once on init, even when no api keys is set. Lazy way to prevent errors :) 
 	Homey.manager('settings').on( 'set', (valname) => {
 		if(valname == 'messagebird.apikey')
@@ -120,8 +121,6 @@ function init() {
 		});
 	});
 
-	
-	
 }
 
 function sendMessage(callback, args) {
@@ -242,7 +241,11 @@ function processStatusReport(report) {
 			
 			// Get additional details from MessageBird online database
 			messagebird.messages.read(report.id, function (err, response) {
-				message.realOriginator = response.originator;
+				try {
+					message.realOriginator = response.originator;
+				} catch(err) {
+					// Just ignore any errors Messagebird might throw and store message as-is
+				}
 				
 				// Store modified message object
 				// Should automagically replace the old object
@@ -316,7 +319,11 @@ function storeMessage(file, messageObject) {
 	var messages = getMessages(file);
 	messages[messageObject.id] = messageObject;
 	
-	fs.writeFileSync( file, JSON.stringify( messages ), 'utf8' );
+	try {
+		fs.writeFileSync( file, JSON.stringify( messages ), 'utf8' );
+	} catch(err) {
+		// Can't replicate the 'permission denied' error. Ignore for now...
+	}
 }
 
 function getMessage(file, id) {
