@@ -10,7 +10,7 @@
 		"nl": "Zend en ontvang SMS berichten via Homey"
 	},
 	"category": "tools",
-    "version": "1.0.1",
+    "version": "1.0.2",
     "compatibility": "0.x || 1.x",
     "author": {
         "name": "Joolee",
